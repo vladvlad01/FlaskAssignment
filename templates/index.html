@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet/styles.css" type="text/css" charset="utf-8" />
+</head>
+<body>
+<div class="title">
+<h2>Minecraft GIF Gallery</h2>
+</div>
+<hr>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 6</div>
+  <img src="img/atntjuggling.gif" >
+  <div class="text">Caption One</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 6</div>
+  <img src="img/bfalconpunch.gif" >
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 6</div>
+  <img src="img/csuperarros.gif" >
+  <div class="text">Caption Three</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 6</div>
+  <img src="img/dlaughing.gif" >
+  <div class="text">Caption Four</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 6</div>
+  <img src="img/ehiding.gif" >
+  <div class="text">Caption Five</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">6 / 6</div>
+  <img src="img/friends.gif" >
+  <div class="text">Caption Six</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+</div>
+
+<script src="javascript/script.js"> </script>
+
+
+<div class="commentSection">
+<hr>
+
+ <form action="viewAllComments">
+    <input type="submit" value="View All Comments" />
+</form>
+<hr>
+
+ <form action="commentAction" method="post">
+ 
+ <table cellpadding="0" cellspacing="0" align="center" border="0" width="60%">
+ <tr>
+ <td rowspan="5" width="20%" align="center">
+ 	Choose your avatar: 
+	<select name="avatarList">	
+  <option value="avatar1">Avatar 1</option>
+  <option value="avatar2">Avatar 2</option>
+  <option value="avatar3">Avatar 3</option>
+  <option value="avatar4">Avatar 4</option>
+  <option value="avatar5">Avatar 5</option>
+</select>
+</td>
+</tr>
+<tr>
+    <td>Enter your name here: <br><input type="text" name="username"></td>
+</tr>
+
+<tr>
+    <td>Enter your email here: <br><input type="text" name="email"></td>
+</tr>
+
+<tr>	
+    <td>Enter a comment here: <br><input type="text" name="comment"></td>
+</tr>
+<tr>
+    <td><input type="submit" value="Submit"></td>
+</tr>
+</table>
+
+	{% for post in posts %}
+<table cellpadding="0" cellspacing="0" align="center" border="1" width="100%">
+	
+	<tr >
+		<td rowspan="4" width="20%" align="center"><img src="img/{{post.avatar}}"></td>
+	</tr>
+	
+	<tr>
+		<td>Posted by <b>{{post.name}}</b></td>
+	</tr>
+	
+	<tr>
+		<td>Message:<i>{{post.message}}</i></td>
+	</tr>
+	
+	<tr>
+		<td>Date: {{post.date}}</td></tr>
+	</tr>
+	
+</table>
+	{% endfor %}
+	
+	
+		<div>
+			<br>
+			<br> 
+			 <br>
+			
+			<hr>
+		</div>
+
+	
+	
+	
+	
+<hr>
+</form>
+</div>
+</body>
+</html> 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    The Comment Section
+  </head>
+  <body>
+    <h1>Here is the comments list:</h1>
+	<form action="/">
+    <input type="submit" value="Back" />
+	</form>
+	
+    {% for post in posts %}
+		<div>
+			<img src="img/{{post.avatar}}" >
+			{{post.name}} : {{post.message}} @ {{post.date}}
+			<hr>
+		</div>
+    {% endfor %}
+	
+  </body>
+</html>
